@@ -15,6 +15,5 @@ class Logs extends _$Logs {
       state.removeFirst();
     }
     state.add(log);
-    print('Logs length ${state.length}');
   }
 }

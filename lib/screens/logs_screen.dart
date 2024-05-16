@@ -29,10 +29,7 @@ class LogsScreen extends ConsumerWidget {
       appBar: AppBar(
         title: const Text('Logs Screen'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: logs.isEmpty? const Text('No logs to display'): _logsWidget(logs),
-      ),
+      body: logs.isEmpty? const Text('No logs to display'): _logsWidget(logs),
     );
   }
 }

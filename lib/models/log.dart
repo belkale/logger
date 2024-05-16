@@ -7,7 +7,7 @@ class Log {
   final Level level;
   final String classname;
   final String message;
-  final String separator = '|';
+  final String separator = ' |';
   Log(this.dateTime, this.level,
       {required this.classname, required this.message});
   String out() {
