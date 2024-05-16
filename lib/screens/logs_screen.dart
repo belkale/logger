@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:logger/providers/filtered_logs.dart';
 import 'package:logger/providers/log_level.dart';
-import 'package:logger/providers/logs.dart';
 
 import '../models/log.dart';
 import '../models/logger.dart';
@@ -52,10 +52,7 @@ class LogsScreen extends ConsumerWidget {
   }
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final logs = ref.watch(logsProvider);
-    final currentLevel = ref.watch(logLevelProvider);
-    final filtered = logs.where((lv) => lv.isValid(currentLevel))
-        .toList(growable: false);
+    final filtered = ref.watch(filteredLogsProvider);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Logs Screen'),
