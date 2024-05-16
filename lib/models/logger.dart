@@ -16,6 +16,6 @@ class Logger {
 
   void debug(WidgetRef ref, String message) => log(ref, Level.debug, message);
   void info(WidgetRef ref, String message) => log(ref, Level.info, message);
-  void warning(WidgetRef ref, String message) => log(ref, Level.warn, message);
+  void warn(WidgetRef ref, String message) => log(ref, Level.warn, message);
   void error(WidgetRef ref, String message) => log(ref, Level.error, message);
 }

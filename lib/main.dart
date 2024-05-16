@@ -74,6 +74,8 @@ class MyHomePage extends ConsumerWidget {
         onPressed: (){
           ref.read(counterProvider.notifier).increment();
           logger.debug(ref, "Pressed increment button");
+          logger.warn(ref, "This is a warning");
+          logger.error(ref, "This is an error");
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),

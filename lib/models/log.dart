@@ -11,6 +11,20 @@ class Log {
   final int maxSize = 400;
   Log(this.dateTime, this.level,
       {required this.classname, required this.message});
+  bool isValid(Level input) {
+    switch(input) {
+      case Level.debug: return true;
+      case Level.info:
+        return level == Level.info
+          || level == Level.warn
+          || level == Level.error;
+      case Level.warn:
+        return level == Level.warn
+            || level == Level.error;
+      case Level.error:
+        return level == Level.error;
+    }
+  }
   String out() {
     final now = DateFormat('yyyy-MM-dd kk:mm').format(dateTime);
     final data = [now, level.name.toUpperCase(), classname, message];

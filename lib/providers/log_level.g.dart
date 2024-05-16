@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'logs.dart';
+part of 'log_level.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$logsHash() => r'4da098d6122cc54bb13cc96e344a48461687bfa3';
+String _$logLevelHash() => r'4bf5934b187a5e8bbe97d2c8261b3129b09244d5';
 
-/// See also [Logs].
-@ProviderFor(Logs)
-final logsProvider = NotifierProvider<Logs, Queue<Log>>.internal(
-  Logs.new,
-  name: r'logsProvider',
+/// See also [LogLevel].
+@ProviderFor(LogLevel)
+final logLevelProvider = AutoDisposeNotifierProvider<LogLevel, Level>.internal(
+  LogLevel.new,
+  name: r'logLevelProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$logsHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$logLevelHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$Logs = Notifier<Queue<Log>>;
+typedef _$LogLevel = AutoDisposeNotifier<Level>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
