@@ -1,16 +1,17 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:intl/intl.dart';
+import 'package:logger/providers/logs.dart';
+
+import 'log.dart';
 
 enum Level {debug, info, warn, error}
 class Logger {
-  final String className;
-  final separator = '|';
-  Logger(this.className);
+  final String classname;
+  Logger(this.classname);
 
   void log(WidgetRef ref, Level level, String message) {
-    final now = DateFormat('yyyy-MM-dd kk:mm').format(DateTime.now());
-    final data = [now, level.name.toUpperCase(), className, message];
-    print(data.join(separator));
+    Log lg = Log(DateTime.now(), level, classname: classname,
+        message: message);
+    ref.read(logsProvider.notifier).add(lg);
   }
 
   void debug(WidgetRef ref, String message) => log(ref, Level.debug, message);

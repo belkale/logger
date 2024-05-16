@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/providers/counter.dart';
+import 'package:logger/screens/logs_screen.dart';
 
 import 'models/logger.dart';
 
@@ -41,6 +42,19 @@ class MyHomePage extends ConsumerWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(title),
+        actions: [
+          IconButton(
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const LogsScreen(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.terminal),
+          ),
+        ],
       ),
       body: Center(
         child: Column(
