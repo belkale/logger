@@ -12,12 +12,10 @@ class LogsScreen extends ConsumerWidget {
   Widget _logsWidget(Queue<Log> logs) {
     return ListView.builder(
       itemCount: logs.length,
-      prototypeItem: ListTile(
-        title: Text(logs.firstOrNull?.out()??''),
-      ),
-      itemBuilder: (context, index) => ListTile(
-        title: Text(logs.elementAt(index).out()),
-      ),
+      itemBuilder: (context, index) =>
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4.0),
+              child: Text(logs.elementAt(index).out())),
     );
   }
 
