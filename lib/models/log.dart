@@ -28,8 +28,8 @@ class Log {
     }
   }
   String out() {
-    final now = DateFormat('yyyy-MM-dd kk:mm').format(dateTime);
-    final data = [now, level.name.toUpperCase(), classname, message];
+    final dateTimeStr = DateFormat('yyyy-MM-dd kk:mm').format(dateTime);
+    final data = [dateTimeStr, level.name.toUpperCase(), classname, message];
     return data.join(separator);
   }
 }
