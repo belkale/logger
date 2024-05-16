@@ -8,9 +8,11 @@ class Log {
   final String classname;
   final String message;
   final String separator = ' |';
-  final int maxSize = 400;
+  static const int maxSize = 300;
   Log(this.dateTime, this.level,
-      {required this.classname, required this.message});
+      {required this.classname, required message})
+      :message = message.length > maxSize?
+        message.subString(0, maxSize) + '...': message;
   bool isValid(Level input) {
     switch(input) {
       case Level.debug: return true;
@@ -28,7 +30,6 @@ class Log {
   String out() {
     final now = DateFormat('yyyy-MM-dd kk:mm').format(dateTime);
     final data = [now, level.name.toUpperCase(), classname, message];
-    final line = data.join(separator);
-    return line.length > maxSize? line.substring(0, maxSize): line;
+    return data.join(separator);
   }
 }
