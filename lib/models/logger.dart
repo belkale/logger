@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:logger/providers/logs.dart';
 
+import '../providers/logs.dart';
 import 'log.dart';
 
 enum Level {debug, info, warn, error}

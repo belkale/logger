@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:logger/providers/counter.dart';
-import 'package:logger/screens/logs_screen.dart';
 
+import 'providers/counter.dart';
+import 'screens/logs_screen.dart';
 import 'models/logger.dart';
 
 void main() {

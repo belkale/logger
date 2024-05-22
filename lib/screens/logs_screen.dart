@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:logger/providers/filtered_logs.dart';
-import 'package:logger/providers/log_level.dart';
 
+import '../providers/filtered_logs.dart';
+import '../providers/log_level.dart';
 import '../models/log.dart';
 import '../models/logger.dart';
 

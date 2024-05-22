@@ -1,8 +1,8 @@
-import 'package:logger/providers/log_level.dart';
-import 'package:logger/providers/logs.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../models/log.dart';
+import 'log_level.dart';
+import 'logs.dart';
 
 part 'filtered_logs.g.dart';
 @riverpod
