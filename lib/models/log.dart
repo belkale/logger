@@ -10,9 +10,9 @@ class Log {
   final String separator = ' |';
   static const int maxSize = 300;
   Log(this.dateTime, this.level,
-      {required this.classname, required message})
+      {required this.classname, required String message})
       :message = message.length > maxSize?
-        message.subString(0, maxSize) + '...': message;
+        '${message.substring(0, maxSize)}...': message;
   bool isValid(Level input) {
     switch(input) {
       case Level.debug: return true;
