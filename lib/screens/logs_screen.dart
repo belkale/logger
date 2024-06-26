@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../providers/filtered_logs.dart';
 import '../providers/log_level.dart';
 import '../models/log.dart';
 import '../models/logger.dart';
+import '../providers/logs.dart';
 
 class LogsScreen extends ConsumerWidget {
   const LogsScreen({super.key});
@@ -56,6 +58,16 @@ class LogsScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Logs Screen'),
+        actions: [
+          IconButton(
+            onPressed: ()async {
+              final logs = ref.read(logsProvider);
+              final logsText = logs.map((log) => log.out()).join('\n');
+              await Share.share(logsText);
+            },
+            icon: const Icon(Icons.share),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 5.0),

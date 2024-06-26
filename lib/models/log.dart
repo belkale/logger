@@ -28,7 +28,7 @@ class Log {
     }
   }
   String out() {
-    final dateTimeStr = DateFormat('yyyy-MM-dd kk:mm').format(dateTime);
+    final dateTimeStr = DateFormat('yyyy-MM-dd HH:mm:ss.SSS').format(dateTime);
     final data = [dateTimeStr, level.name.toUpperCase(), classname, message];
     return data.join(separator);
   }
